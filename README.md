@@ -15,6 +15,6 @@ This repo contains the code to export the tools from the AI Native Dev Landscape
 
 ## Icons
 - run `make yaml` to export to a single YAML file (data/yaml)
-- run `make repo` to export to a data repo (data/repo)
+- run `make json` to export to a single json file (data/yaml)
 - run `make icons` to download the icons (data/repo/data/icons)
-
+- run `make repo` to export to a multi yaml data repo (data/repo)
