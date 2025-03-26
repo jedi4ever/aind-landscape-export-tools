@@ -18,6 +18,7 @@ TOOL_VERIFIED_FIELD = "Verified"
 TOOL_OSS_FIELD = "OSS"
 TOOL_OSS_REPO_URL = "OSS Repo URL"
 TOOL_BETA_FIELD = "Beta"
+TOOL_POPULAR_FIELD = "Popular"
 TOOL_SOCIAL_MEDIA_FIELD = "Tool Socials"
 TOOL_DATE_ADDED_FIELD = "Date Added"
 TOOL_COMPANY_NAME_FIELD = "Company Name"
@@ -96,23 +97,31 @@ def all_tools(domains, categories, tools):
 
                 # if the tool is verified, set the verified field to true
                 if (tool[TOOL_VERIFIED_FIELD] is not None and tool[TOOL_VERIFIED_FIELD] != ""):
-                    yaml_tool["tags"].append("verified")
+                    yaml_tool["tags"].append("Verified")
                     yaml_tool["verified"] = True
                 else:
                     yaml_tool["verified"] = False
 
                 # check oss field
                 if (tool[TOOL_OSS_FIELD] is not None and tool[TOOL_OSS_FIELD] != ""):
-                    yaml_tool["tags"].append("oss")
+                    yaml_tool["tags"].append("OSS")
                     yaml_tool["oss"] = True
                 else:
                     yaml_tool["oss"] = False
 
+                # check popular field
+                if (tool[TOOL_POPULAR_FIELD] is not None and tool[TOOL_POPULAR_FIELD] != ""):
+                    #yaml_tool["tags"].append("Popular")
+                    yaml_tool["popular"] = True
+                else:
+                    yaml_tool["popular"] = False
+
 
                 if (tool[TOOL_BETA_FIELD] is not None and tool[TOOL_BETA_FIELD] != ""):
-                    yaml_tool["tags"].append("beta")
+                    yaml_tool["tags"].append("Beta")
                 else:
                     yaml_tool["tags"].append("GA")
+                
 
                 yaml_tool["tags"].append(category[CATEGORY_NAME_FIELD])
                 yaml_tool["tags"].append(domain[DOMAIN_NAME_FIELD])

@@ -2,6 +2,9 @@
 yaml:
 	python export_single.py > data/yaml/tools-landscape-$(shell date +%Y-%m-%d-%H-%M-%S).yaml
 
+json:
+	python export_tools_json.py > data/json/tools-landscape-$(shell date +%Y-%m-%d-%H-%M-%S).json
+
 repo:
 	rm -rf ./data/repo
 	python export_split.py
