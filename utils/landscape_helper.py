@@ -177,7 +177,7 @@ def categories_for_domain(domain, categories):
 def tools_for_domain_and_category(domain, category, tools):
     domain_tools = []
     for tool in tools:
-        if tool[TOOL_DOMAIN_FIELD] == domain[DOMAIN_NAME_FIELD] and tool[TOOL_CATEGORY_FIELD] == category[CATEGORY_NAME_FIELD]:
+        if tool[TOOL_DOMAIN_FIELD].lower() == domain[DOMAIN_NAME_FIELD].lower() and tool[TOOL_CATEGORY_FIELD].lower() == category[CATEGORY_NAME_FIELD].lower():
             domain_tools.append(tool)
     return domain_tools
 
